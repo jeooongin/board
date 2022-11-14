@@ -3,6 +3,7 @@ import Head from "next/head";
 import "antd/dist/antd.css";
 
 import Layout from "../components/Layout";
+import wrapper from "../store/configureStore";
 
 const _app = ({ Component }) => {
   return (
@@ -17,4 +18,4 @@ const _app = ({ Component }) => {
   );
 };
 
-export default _app;
+export default wrapper.withRedux(_app);
