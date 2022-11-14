@@ -9,7 +9,7 @@ const _app = ({ Component }) => {
   return (
     <>
       <Head>
-        <title>JI-board</title>
+        <title>Board</title>
       </Head>
       <Layout>
         <Component />
