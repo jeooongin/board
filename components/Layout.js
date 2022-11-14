@@ -37,12 +37,14 @@ const items = [
   },
 ];
 
-const App = ({ children }) => {
+const Layout = ({ children }) => {
   return (
     <>
       <Menu mode="horizontal" items={items} />
       <Row gutter={8}>
-        <Col xs={24} md={6}></Col>
+        <Col xs={24} md={6}>
+          left side
+        </Col>
         <Col xs={24} md={18}>
           {children}
         </Col>
@@ -51,4 +53,4 @@ const App = ({ children }) => {
   );
 };
 
-export default App;
+export default Layout;
