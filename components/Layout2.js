@@ -35,6 +35,7 @@ const items = [
     ),
     key: "/signup",
   },
+  ,
 ];
 
 const Layout = ({ children }) => {
@@ -53,4 +54,4 @@ const Layout = ({ children }) => {
   );
 };
 
-export default Layout;
+export default Layout2;
