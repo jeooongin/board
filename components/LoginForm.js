@@ -11,7 +11,7 @@ const ButtonWrapper = styled.div`
   margin-top: 10px;
 `;
 
-const LoginForm = () => {
+const LogInForm = () => {
   const [email, onChangeEmail] = useInput("");
   const [password, onChangePassword] = useInput("");
 
@@ -19,12 +19,12 @@ const LoginForm = () => {
   const { logInLoading } = useSelector((state) => state.user);
 
   // 로그인 폼 submit 함수
-  const onSubmitForm = useCallback(() => {
+  const onSubmitLogInForm = useCallback(() => {
     dispatch(logIn(email, password));
   }, [email, password]);
 
   return (
-    <Form onFinish={onSubmitForm}>
+    <Form onFinish={onSubmitLogInForm}>
       <div>
         <label htmlFor="user-email">이메일</label>
         <br />
@@ -56,4 +56,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default LogInForm;
