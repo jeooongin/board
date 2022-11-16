@@ -30,6 +30,7 @@ const SignUpForm = () => {
   const dispatch = useDispatch();
   const { signUpLoading, signUpDone } = useSelector((state) => state.user);
 
+  // 회원가입 버튼 클릭 시 입력 값 초기화
   useEffect(() => {
     if (signUpDone) {
       setEmail("");
@@ -41,6 +42,7 @@ const SignUpForm = () => {
     }
   }, [signUpDone]);
 
+  // 비밀번호, 비밀번호 확인 값 비교 함수
   const onChangePasswordCheck = useCallback(
     (e) => {
       setPasswordCheck(e.target.value);
@@ -49,6 +51,7 @@ const SignUpForm = () => {
     [password]
   );
 
+  // 회원가입 폼 submit 함수
   const onSubmitForm = useCallback(() => {
     dispatch(signUp(email, name, nickName, password));
   }, [password, passwordCheck]);
@@ -89,7 +92,7 @@ const SignUpForm = () => {
         />
       </div>
       <div>
-        <label htmlFor="user-password">패스워드</label>
+        <label htmlFor="user-password">비밀번호</label>
         <br />
         <Input
           name="user-password"
@@ -100,7 +103,7 @@ const SignUpForm = () => {
         />
       </div>
       <div>
-        <label htmlFor="user-password-check">패스워드 확인</label>
+        <label htmlFor="user-password-check">비밀번호 확인</label>
         <br />
         <Input
           name="user-password-check"
@@ -109,7 +112,7 @@ const SignUpForm = () => {
           onChange={onChangePasswordCheck}
           required
         />
-        {passwordError && <Error>패스워드가 일치하지 않습니다.</Error>}
+        {passwordError && <Error>비밀번호가 일치하지 않습니다.</Error>}
       </div>
       <ButtonWrapper>
         <Button type="primary" htmlType="submit" loading={signUpLoading}>
