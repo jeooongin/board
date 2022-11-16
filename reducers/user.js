@@ -18,6 +18,7 @@ const initialState = {
   logInLoading: false,
   logInDone: false,
   logInFailure: null,
+  logOutFailure: null,
   signUpLoading: false,
   signUpDone: false,
   signUpFailure: null,
@@ -43,7 +44,10 @@ export const logIn = createAsyncThunk("user/login", async (data, thunkAPI) => {
   }
 });
 
-export const logOut = createAsyncThunk("user/logout", async () => {});
+export const logOut = createAsyncThunk("user/logout", async () => {
+  const response = await sleep(1000);
+  return response;
+});
 
 export const signUp = createAsyncThunk(
   "user/signup",
@@ -78,6 +82,18 @@ const userSlice = createSlice({
         state.logInLoading = false;
         state.logInDone = false;
         state.logInFailure = action.payload;
+      })
+      .addCase(logOut.pending, (state) => {
+        state.logInDone = true;
+        state.logOutFailure = null;
+      })
+      .addCase(logOut.fulfilled, (state) => {
+        state.logInDone = false;
+        state.me = null;
+      })
+      .addCase(logOut.rejected, (state, action) => {
+        state.logInDone = true;
+        state.logOutFailure = action.payload;
       })
       .addCase(signUp.pending, (state) => {
         state.signUpLoading = true;
