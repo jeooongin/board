@@ -6,10 +6,6 @@ import styled from "styled-components";
 import useInput from "../hooks/useInput";
 import { signUp } from "../reducers/user";
 
-const FormWrapper = styled(Form)`
-  margin: 10px;
-`;
-
 const ButtonWrapper = styled.div`
   margin-top: 10px;
 `;
@@ -57,7 +53,7 @@ const SignUpForm = () => {
   }, [password, passwordCheck]);
 
   return (
-    <FormWrapper onFinish={onSubmitForm}>
+    <Form onFinish={onSubmitForm}>
       <div>
         <label htmlFor="user-email">이메일</label>
         <br />
@@ -119,7 +115,7 @@ const SignUpForm = () => {
           회원가입
         </Button>
       </ButtonWrapper>
-    </FormWrapper>
+    </Form>
   );
 };
 
