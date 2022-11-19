@@ -34,7 +34,7 @@ const UserProfileDropDown = () => {
 
   return (
     <Dropdown menu={{ items }} trigger={["click"]}>
-      <Space>
+      <Space style={{ cursor: "pointer" }}>
         <Avatar icon={<UserOutlined />} />
         <CaretDownOutlined style={{ color: "white" }} />
       </Space>
