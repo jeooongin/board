@@ -55,11 +55,11 @@ const AppLayout = ({ children }) => {
         <SiderLayout />
         <Content>
           <Row>
-            <Col xs={24} md={6}></Col>
-            <Col xs={24} md={12}>
+            <Col xs={24} md={4}></Col>
+            <Col xs={24} md={16}>
               {children}
             </Col>
-            <Col xs={24} md={6}></Col>
+            <Col xs={24} md={4}></Col>
           </Row>
         </Content>
       </Layout>
