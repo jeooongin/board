@@ -1,9 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-/* 
-  api 역할을 담당할 sleep 함수 구현
-  나중에 비동기 액션의 sleep 함수를 api를 받아오도록 변경
-*/
+/* api 역할을 담당할 sleep 함수 구현
+나중에 비동기 액션의 sleep 함수를 api를 받아오도록 변경 */
 function sleep(ms, data = null) {
   return new Promise((resolve) =>
     setTimeout(() => {
@@ -11,6 +9,16 @@ function sleep(ms, data = null) {
     }, ms)
   );
 }
+
+// 더미 데이터
+const dummyUser = (data) => ({
+  ...data,
+  id: 1,
+  email: "gildong@naver.com",
+  name: "홍길동",
+  nickName: "의적",
+  introduce: "홍길동입니다.",
+});
 
 // initialState
 const initialState = {
@@ -23,16 +31,6 @@ const initialState = {
   signUpDone: false,
   signUpFailure: null,
 };
-
-// 더미 데이터
-const dummyUser = (data) => ({
-  ...data,
-  id: 1,
-  email: "gildong@naver.com",
-  name: "홍길동",
-  nickName: "의적",
-  introduce: "홍길동입니다.",
-});
 
 // 비동기 액션
 export const logIn = createAsyncThunk("user/login", async (data, thunkAPI) => {
