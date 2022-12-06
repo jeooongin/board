@@ -1,4 +1,11 @@
-# Board
-```
-next.js, 리액트, 리덕스 툴킷을 활용한 게시판
-```
+# 1. 프로젝트 소개
+
+# 2. 사용 기술
+* React
+* Redux Toolkit
+* Next.js
+* HTML
+* CSS
+* Ant Design
+
+# 3. 트러블 슈팅
